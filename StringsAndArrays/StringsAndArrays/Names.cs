@@ -16,6 +16,7 @@ namespace StringsAndArrays
 {
     public partial class frmNames : Form
     {
+        //initialize class variables
         string[] First = new string[50];
         string[] Middle = new string[50];
         string[] Last = new string[50];
@@ -26,6 +27,7 @@ namespace StringsAndArrays
             InitializeComponent();
         }
 
+        //takes text from text box and adds to array
         private void btnAdd_Click(object sender, EventArgs e)
         {
             int i, j;
@@ -34,13 +36,14 @@ namespace StringsAndArrays
 
             try
             {
+                //read in name and look for spaces to determine First, Middle, and Last
                 strName = txtBxEnterName.Text;
                 i = strName.IndexOf(" ");
                 j = strName.LastIndexOf(" ");
 
-                if (intCount < 50)
+                if (intCount < 50) //determines if array is full
                 {
-                    if (i == j)
+                    if (i == j) //determines if middle name entered
                     {
                         strFirst = strName.Substring(0, i);
                         strFirst1 = strFirst.Substring(0, 1).ToUpper();
@@ -54,7 +57,7 @@ namespace StringsAndArrays
                         Last[intCount] = strLast;
                         Middle[intCount] = "";
                     }
-                    else
+                    else //middle name entered
                     {
                         strFirst = strName.Substring(0, i);
                         strFirst1 = strFirst.Substring(0, 1).ToUpper();
@@ -71,20 +74,21 @@ namespace StringsAndArrays
                         First[intCount] = strFirst;
                         Middle[intCount] = strMiddle;
                         Last[intCount] = strLast;
-                    }
-                    intCount++;
+                    } //end if i=j
+                    intCount++; //increases count for each entry in array
                     txtBxEnterName.Clear();
                     txtBxEnterName.Focus();
                 }
                 else
                 {
+                    //array is full, show message
                     MessageBox.Show("Too Many Variables. Clear All and Try Again.");
-                }
+                } //end if intCount<50
             }
             catch (Exception)
             {
                 MessageBox.Show("Invalid Entry. Try Again.");
-            }
+            } //end try
         }
 
         private void btnDisplay1_Click(object sender, EventArgs e)
