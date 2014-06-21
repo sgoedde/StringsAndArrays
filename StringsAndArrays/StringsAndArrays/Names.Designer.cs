@@ -37,6 +37,11 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.txtBxDisplay = new System.Windows.Forms.RichTextBox();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblFiller = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblRecord = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblEnter
@@ -98,6 +103,7 @@
             // 
             // btnClear
             // 
+            this.btnClear.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClear.Location = new System.Drawing.Point(25, 228);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 33);
@@ -125,6 +131,34 @@
             this.txtBxDisplay.TabIndex = 8;
             this.txtBxDisplay.Text = "";
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblStatus,
+            this.lblFiller,
+            this.lblRecord});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 303);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(379, 22);
+            this.statusStrip1.TabIndex = 9;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(0, 17);
+            // 
+            // lblFiller
+            // 
+            this.lblFiller.Name = "lblFiller";
+            this.lblFiller.Size = new System.Drawing.Size(333, 17);
+            this.lblFiller.Spring = true;
+            // 
+            // lblRecord
+            // 
+            this.lblRecord.Name = "lblRecord";
+            this.lblRecord.Size = new System.Drawing.Size(0, 17);
+            // 
             // frmNames
             // 
             this.AcceptButton = this.btnAdd;
@@ -132,6 +166,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnClear;
             this.ClientSize = new System.Drawing.Size(379, 325);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.txtBxDisplay);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnClear);
@@ -142,9 +177,11 @@
             this.Controls.Add(this.txtBxEnterName);
             this.Controls.Add(this.lblEnter);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmNames";
             this.Text = "Names";
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,6 +198,10 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.RichTextBox txtBxDisplay;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel lblStatus;
+        private System.Windows.Forms.ToolStripStatusLabel lblFiller;
+        private System.Windows.Forms.ToolStripStatusLabel lblRecord;
     }
 }
 
