@@ -91,6 +91,7 @@ namespace StringsAndArrays
             } //end try
         }
 
+        //test comment
         private void btnDisplay1_Click(object sender, EventArgs e)
         {
             string strOutput1 = "LIST 1".PadLeft(30)+"\n";
